@@ -1,0 +1,115 @@
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 10vw;
+    margin-top: 20px;
+}
+
+#poster {
+    width: 300px;
+    border: 3px solid rgb(96, 70, 70);
+    border-radius: 5px;
+    height: 450px;
+    box-shadow: 0 0 15px 0;
+}
+
+.block-A {
+    width: calc(100% - 350px);
+}
+
+.movie-info p,
+.rating {
+    margin: 5px 20px;
+}
+
+.booking-container {
+    width: 100%;
+    display: flex;
+    margin: 35px 10px;
+    border: 2px solid rgb(96, 70, 70);
+    border-radius: 5px;
+    box-shadow: 0 0 15px 0;
+}
+
+.showtime,
+#book{
+    padding: 10px;
+    width: 50%;
+}
+
+#book {
+    border-left: 1px solid rgb(96, 70, 70);
+}
+
+.date {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date div{
+    padding: 5px;
+    width: fit-content;
+    margin-bottom: 15px;
+}
+
+#today,
+#tomorrow,
+#next{
+    border: 3px solid grey;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#today:hover,
+#tomorrow:hover,
+#next:hover{
+    background-color: blue;
+    color: red;
+}
+.current{
+    border: 3px solid blue !important;
+}
+.time{
+    padding: 5px;
+}
+.time div{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+    margin-bottom: 15px;
+}
+
+.time form button{
+    width: 100%;
+}
+
+#book p{
+    margin-bottom: 10px;
+}
+
+#book button{
+    width: 50%;
+    height: 30px;
+    margin: 0 25%;
+    font-size: 18px;
+}
+
+#book input{
+    width: 45px;
+    padding: 5px 5px 5px  10px;
+    background-color: grey;
+    border: none;
+    border-radius: 5px;
+}
+
+.hide {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}

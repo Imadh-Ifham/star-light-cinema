@@ -1,0 +1,61 @@
+.poster{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.poster img {
+    width: 300px;
+    height: auto;
+    margin: 20px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 0;
+}
+
+.offer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px auto;
+    width: calc(100% - 50px);
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.552);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.offer-details {
+    flex: 1;
+    padding: 20px;
+}
+
+.offer-details h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.offer-details p {
+    margin: 10px 0;
+}
+
+.offer-button {
+    flex: 0 0 150px;
+    text-align: center;
+    border-left: 1px solid #ddd;
+}
+
+.offer-button a {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.offer-button a:hover {
+    background-color: #555;
+}

@@ -1,0 +1,200 @@
+main{
+    padding-top: 100px;
+}
+header hr{
+    border: none;
+    height: 2px;
+    background-color: red;
+}
+
+/* Styles for Movie List Start */
+.movie-list{
+    position: fixed;
+    top: 0;
+	background-color: #303030;
+	color:#f2f3f4;
+    width: 200px;
+    height: 100%;
+    padding: 100px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.movie-list ol{
+    height: 20vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.movie-list li{
+    margin-left: 30px;
+}
+.movie-list h5{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+/* Styles for movie list end */
+
+/* Styles for main content */
+.main-content{
+    margin-left: 200px;
+    width: calc(100%-200px);
+}
+.main-content > h3{
+    margin-left: 5vw;
+}
+.main-content > h3 > a{
+    text-decoration: none;
+    color: black;
+}
+.main-content > h3 > a:hover{
+    color: grey;
+}
+
+.sub-container{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+#movie-image-container{
+    width: 300px;
+    height: fit-content;
+    padding: 0;
+    min-height: 200px;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+#movie-image{
+    width: 300px;
+    height: auto;
+    border: 3px solid rgb(98, 98, 98);
+    border-radius: 5px;
+}
+
+.admin-form{
+    border: 2px solid rgb(98, 98, 98);
+    border-radius: 5px;
+    width: fit-content;
+    margin: auto ;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 15px;
+}
+.bold,
+.block label,
+.admin-form p{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form-group {
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.form-group input[type="radio"],
+.form-group input[type="checkbox"]{
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.admin-form input[type="submit"]{
+    width: 70%;
+    height: 25px;
+}
+#poster-check-btn{
+    margin-top: 5px;
+}
+#rating{
+    margin: 0 29px 0 8px;
+}
+
+.block > input{
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 0 5px 0 5px;
+}
+#duration{
+    width: 80px;
+}
+#description{
+    width: 100%;
+    padding: 5px;
+}
+
+.showtime-group,
+.cast-info{
+    border: 1px solid  #949494;
+    border-radius: 3px;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.showtime-group{
+    text-align: left;
+}
+.cast-inputs{
+    display: flex;
+    justify-content: space-between;
+}
+.cast-inputs .block{
+    width: 80%;
+}
+.cast-inputs input[type="text"]{
+    margin-top: 5px;
+}
+#cast-pic{
+    width: 20%;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+#cast-pic img{
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 100%;
+}
+.close{
+    position: relative;
+    border: 2px solid black;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+    left: 270px;
+    top: 30px;
+    background-color:grey;
+}
+
+.close:hover{
+    background-color: #4d4d4d;
+}
+
+#time-block input{
+    margin: 5px 5px 0 30px;
+}
+.showtime-group i{
+    top: -20px;
+    left: 365px;
+}
+.showtime-group:not(:last-child) .remove-btn2{
+    display: none;
+}
+.showtime-group:first-child .remove-btn2{
+    display: none;
+}
+
+@media (max-width:700px){
+    .main-content{
+        margin-left: auto;
+        width: 100%;
+    }
+    .movie-list{
+        display: none;
+    }
+}

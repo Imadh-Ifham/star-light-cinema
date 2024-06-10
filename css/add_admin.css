@@ -1,0 +1,98 @@
+/*main *{
+	border: 1px solid black;
+    
+}*/
+
+main{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.main-content {
+    max-width: 800px;
+    margin-top: 150px ;
+	margin-bottom: 10px;
+    padding: 25px ;
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 15px;
+}
+
+.main-content h1{
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    
+}
+
+.main-content.myform{
+    margin-top: 30px;
+}
+
+
+.myform.admin-Input{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.admin-Input label{
+  
+  color: #000000;
+  
+}
+
+.admin-Input{
+    margin-top: 10px;
+}
+.admin-Input [type = radio]{
+    position: relative;
+    outline: none;
+    margin-top: 8px;
+    cursor: pointer;
+    transform: scale(1.5);
+    margin-right: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.admin-Input [type = text],[type = password],[type = date]{
+    position: relative;
+    height: 50px;
+	width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #000000;
+	background: white;
+    border: 1px solid  #ddd;
+	border-radius: 6px;
+    padding: 0 15px;
+    margin-top: 8px;
+}
+
+
+.column{
+    display: flex;
+    column-gap: 10px;
+}
+
+ .myForm button{
+    height:55px;
+    width: 30%;
+    color: #ddd;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    background-color: #3554ba;
+}
+
+.myForm button:hover{
+    background-color: rgba(43, 32, 194, 0.733)
+}

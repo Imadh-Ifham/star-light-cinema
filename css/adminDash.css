@@ -1,0 +1,302 @@
+main{
+    padding-top: 140px;
+}
+.movie,
+.poster{
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+.movies,
+.posters{
+    border: 2px solid grey;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 0;
+}
+
+/* Styles for Movie Stats */
+.movie-stat{
+    width: 300px;
+    padding: 20px;
+    margin: 30px auto;
+    border: 2px solid grey;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 0;
+}
+.movie-stat p {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+.movie-stat span{
+    margin-left: auto;
+}
+
+/* Styles for movie Section */
+#movie-container,
+#poster-container{
+    scroll-margin-top: 140px;
+    width: 90vw;
+    margin: auto;
+}
+#admin-btn{
+    position: absolute;
+    right: 10px;
+}
+
+#add-movie-btn,
+#admin-btn{
+    cursor: pointer;
+}
+
+.movies{
+    height: 75vh;
+    margin: 10px;
+    overflow-y: scroll;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 10px;
+}
+#movie-container > span{
+    display: flex;
+    justify-content: space-between;
+}
+.heading{
+    margin-left: 30px;
+    padding-top: 5px;
+}
+button{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.movie{
+    display: flex;
+    width: calc(50% - 15px);
+    height: fit-content;
+    overflow: hidden;
+    box-shadow: 0 0 5px 0;
+}
+.movie img{
+    width: 100px;
+    height: 150px;
+}
+.movie > div{
+    width: 100%;
+    height: 150px;
+    font-size: 0.8rem;
+    padding: 10px 0 5px 20px;
+}
+
+.form{
+    display: flex;
+    width: fit-content;
+    position: relative;
+    top: -45px;
+    left: 350px;
+    gap: 10px;
+}
+
+.deleteForm button,
+.editForm button{
+    cursor: pointer;
+    width: 30px;
+    padding: 0;
+    border: none;
+}
+.deleteForm i,
+.editForm i{
+    font-size: 16px;
+    padding: 3px;
+    border: 2px solid rgb(74, 74, 74);
+    border-radius: 5px;
+}
+.deleteForm i {
+    padding: 3px 4px;
+}
+
+
+
+/* Styles for Movie section End */
+
+/* Styles for Poster Section */
+
+#poster-container{
+    margin-top: 50px;
+}
+#poster-container>div{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/*Styles for slider start*/
+.slider{
+    width: 40vw;
+    min-width: 400px;
+    height: 25vw;
+    min-height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 0 15px 5px;
+}
+
+.slides{
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    transition: 2s;
+}
+.slide img{
+    width: 100%;
+    height: 100%;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+#radio5:checked ~ .first{
+    margin-left: -80%;
+}
+/*Styles for slider ends*/
+
+.posters{
+    width: 45vw;
+    min-width: 400px;
+    height: 25vw;
+    min-height: 300px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 5px;
+    column-gap: 10px;
+    align-items: center;
+}
+.poster{
+    height: fit-content;
+    width: 200px;
+    flex-shrink: 0;
+    box-shadow: 0 0 5px 0;
+}
+
+
+.poster-head{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.poster-head h4{
+    padding-top: 3px;
+}
+.icon1{
+    font-size: 20px;
+    margin-left: 10px;
+    width: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+.icon1 button {
+    width: 20px;
+    height: 20px;
+}
+.icons{
+    width: 60px;
+}
+.posters img{
+    width: 100%;
+    height: 125px;
+    display: block;
+}
+.poster-textbox{
+    margin: 5px;
+}
+.txt {
+    font-size: 10px;
+    font-weight: bold;
+}
+.text {
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+}
+.editPosterBox {
+    background-color: white;
+    padding: 0 20px 20px;
+    border-radius: 8px;
+    width: 300px;
+    margin: 200px auto;
+}
+
+.closeEdit{
+    padding: 2px 3px;
+    border: 2px solid black;
+    border-radius: 5px;
+    position: relative;
+    left: calc(100% - 22px);
+    top: 22px;
+    cursor: pointer;
+}
+
+.closeEdit:hover{
+    background-color: grey;
+}
+
+.editPosterBox h2{
+    width: fit-content;
+    border-bottom: 2px solid black;
+}
+ 
+.editPosterBox form {
+    text-align: center;
+}
+
+.editPosterBox input {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    padding: 0 20px;
+    font-size: 16px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Styles for Poster Section Ends */
+
+@media (max-width: 900px){
+    .posters,.movie{
+        width: 100%;
+    }
+}

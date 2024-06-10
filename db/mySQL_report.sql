@@ -1,0 +1,156 @@
+/*Offer Table*/
+CREATE TABLE Offer (
+OID INTEGER AUTO_INCREMENT,
+type VARCHAR(10) NOT NULL,
+ Created_Date DATE,
+Name VARCHAR(40) NOT NULL,
+CONSTRAINT Offer_PK PRIMARY KEY (OID)
+);
+/*Movie Table*/
+CREATE TABLE Movie
+(
+MID INT AUTO_INCREMENT,
+Title VARCHAR(50) NOT NULL UNIQUE,
+Director VARCHAR(40),
+ Duration TIME,
+ Description VARCHAR(500),
+IMDB_Rating INT,
+Movie_Status CHAR(13) NOT NULL,
+OID INT,
+CONSTRAINT Movie_PK PRIMARY KEY (MID),
+CONSTRAINT Movie_FK FOREIGN KEY (OID) REFERENCES Offer(OID)
+);
+/*Movie Genre Table*/
+CREATE TABLE Movie_Genre(
+MID INTEGER,
+ Genre VARCHAR(15),
+CONSTRAINT Movie_Genre_pk PRIMARY KEY (Genre, MID),
+CONSTRAINT Movie_Genre_Movie_fk FOREIGN KEY (MID) REFERENCES Movie(MID)
+);
+/*Movie Cast Table*/
+CREATE TABLE Movie_Cast (
+MID INTEGER,
+Actor_name VARCHAR(30),
+CONSTRAINT Movie_Cast_PK PRIMARY KEY (Actor_name, MID),
+CONSTRAINT Movie_Cast_Movie_fk FOREIGN KEY (MID) REFERENCES Movie(MID)
+);
+/*Users Table*/
+CREATE TABLE Users (
+UID INTEGER AUTO_INCREMENT,
+ Email VARCHAR(100) UNIQUE NOT NULL,
+ Gender CHAR(7),
+First_Name VARCHAR (25) NOT NULL,
+Last_Name VARCHAR (25) NOT NULL,
+City VARCHAR(25),
+CONSTRAINT User_PK PRIMARY KEY (UID)
+);
+/*Hall Table*/
+CREATE TABLE Hall(
+Hall_ID CHAR(3),
+Name VARCHAR(25),
+Capacity INTEGER NOT NULL,
+Address VARCHAR(100),
+Type VARCHAR(5),
+Screen_Size VARCHAR(10),
+CONSTRAINT Hall_PK PRIMARY KEY (Hall_ID)
+);
+/*Shows Table*/
+CREATE TABLE Shows (
+Show_ID INTEGER AUTO_INCREMENT,
+Start_Time TIME NOT NULL,
+Hall_ID CHAR(3) NOT NULL,
+Date DATE NOT NULL,
+MID INTEGER NOT NULL,
+Price DECIMAL(7,2),
+Availability INTEGER,
+CONSTRAINT Show_PK PRIMARY KEY (Show_ID),
+CONSTRAINT Show_Movie_FK FOREIGN KEY (MID) REFERENCES Movie(MID),
+CONSTRAINT Show_Hall_FK FOREIGN KEY (Hall_ID) REFERENCES Hall(Hall_ID)
+);
+/*Poster Table*/
+CREATE TABLE Poster (
+ID INTEGER AUTO_INCREMENT,
+Name VARCHAR(50) NOT NULL,
+ Created_Date DATE,
+MID INTEGER,
+    CONSTRAINT Poster_PK PRIMARY KEY (ID),
+CONSTRAINT Poster_Movie_FK FOREIGN KEY (MID) REFERENCES Movie(MID)
+);
+/*Admin Table*/
+CREATE TABLE Admins (
+Admin_ID INTEGER AUTO_INCREMENT,
+First_Name VARCHAR(20) NOT NULL,
+Last_Name VARCHAR(20) NOT NULL,
+Email VARCHAR(50) UNIQUE,
+ Role VARCHAR(20) NOT NULL,
+ Password VARCHAR(20) NOT NULL,
+ Phone_Number CHAR(11),
+ 
+CONSTRAINT Admins_PK PRIMARY KEY (Admin_ID)
+);
+
+/*Movie Admin Table*/
+CREATE TABLE Movie_Admin (
+MID INTEGER,
+Admin_ID INTEGER,
+Action CHAR(7), /* Add/Delete/Update */
+Date DATE,
+CONSTRAINT Admin_Movie_pk PRIMARY KEY (Admin_ID, MID),
+CONSTRAINT Admin_Movie_Admin_fk FOREIGN KEY (Admin_ID) REFERENCES
+Admins(Admin_ID),
+CONSTRAINT Admin_Movie_Movie_fk FOREIGN KEY (MID) REFERENCES Movie(MID)
+);
+/*Admin Offer Table*/
+CREATE TABLE Admin_Offer 
+(
+Admin_ID INTEGER,
+OID INTEGER,
+Action CHAR(7), /* Add/Delete/Update */
+Date DATE,
+CONSTRAINT Admin_Offer_pk PRIMARY KEY (Admin_ID, OID),
+CONSTRAINT Admin_Offer_Admin_fk FOREIGN KEY (Admin_ID) REFERENCES
+Admins(Admin_ID),
+CONSTRAINT Admin_Offer_Offer_fk FOREIGN KEY (OID) REFERENCES Offer(OID)
+);
+/*Admin Poster Table*/
+CREATE TABLE Admin_Poster (
+Admin_ID INTEGER,
+Poster_ID INTEGER,
+Action CHAR(7), /* Add/Delete/Update */
+Date DATE,
+CONSTRAINT Admin_Poster_pk PRIMARY KEY (Admin_ID, Poster_ID),
+CONSTRAINT Admin_Poster_Admin_fk FOREIGN KEY (Admin_ID) REFERENCES
+Admins(Admin_ID),
+CONSTRAINT Admin_Poster_Poster_fk FOREIGN KEY (Poster_ID) REFERENCES Poster(ID)
+);
+
+/*Inquiry Table*/
+CREATE TABLE Inquiry (
+Inquiry_ID INTEGER AUTO_INCREMENT,
+Date DATE,
+User_ID INTEGER NOT NULL,
+Message VARCHAR(100) NOT NULL,
+CONSTRAINT Inquiry_pk PRIMARY KEY (Inquiry_ID),
+CONSTRAINT Inquiry_User_FK FOREIGN KEY (Inquiry_ID) REFERENCES Users(UID)
+);
+/*Admin Inquiry Table*/
+CREATE TABLE Admin_Inquiry (
+Admin_ID INTEGER,
+Inquiry_ID INTEGER,
+Action CHAR(7), /* Approve/Reject */
+Date DATE,
+CONSTRAINT Admin_Inquiry_pk PRIMARY KEY (Admin_ID, Inquiry_ID),
+CONSTRAINT Admin_Inquiry_Admin_fk FOREIGN KEY (Admin_ID) REFERENCES
+Admins(Admin_ID)
+);
+/*Booking Table*/
+CREATE TABLE Booking (
+User_ID INTEGER,
+ Show_ID INTEGER,
+ MID INTEGER,
+CONSTRAINT Booking_PK PRIMARY KEY (MID,Show_Id,User_ID),
+CONSTRAINT Booking_Movie_Id_FK FOREIGN KEY (MID) REFERENCES Movie(MID),
+CONSTRAINT Booking_Show_Id_Fk FOREIGN KEY (Show_ID) REFERENCES
+Shows(Show_ID),
+CONSTRAINT Booking_User_Id_FK FOREIGN KEY (User_ID) REFERENCES Users(UID)
+);

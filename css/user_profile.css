@@ -1,0 +1,163 @@
+main{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    max-width: 800px;
+    margin-top: 10px ;
+	margin-bottom: 10px;
+    padding: 30px ;
+    position: relative;
+    width: 100%;
+    background-color: rgb(135, 133, 133);
+    border-radius: 8px;
+    box-shadow: 2px 5px 20px;
+}
+
+.profile-info{
+    display: block;
+}
+
+h1{
+    font-family: "Montserrat","sans-serif";
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.container h2{
+   color: #090808;
+   font-family: "Roboto" , "sans-serif";
+   font-size: 15px;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   margin-left: 2px;
+   margin-top: 10px;
+}
+
+p{
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #000000;
+    font-family: "Roboto" , "sans-serif";
+    font-size: 1.1rem;
+}
+.input-field input{
+    position: relative;
+    height: 40px;
+	width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #000000;
+	background: white;
+    border: 1px solid  #ddd;
+	border-radius: 6px;
+    padding: 0 15px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    
+}
+
+.passwordform{
+    display: none;
+}
+
+.edit-form{
+    display: none;
+}
+
+#editbutton,#editpasswordbutton{
+    font-family: "Roboto" , "sans-serif";
+    text-transform: uppercase;
+    font-size: 15px;
+    color: white;
+    background-color:rgb(42, 19, 63);
+    cursor: pointer;
+    padding: 7px 15px;
+    box-shadow: 0px 2px 4px 0px rgb(42, 19, 63);
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.edit-form label{
+    margin-top: 30px;
+}
+
+.s-container{
+    position: fixed;
+    top: 10%;
+    left: 0%;
+    background-color: #303030;
+    color:#f2f3f4;
+    width: 250px;
+    height: 100%;
+    padding: 100px 10px 10px 10px;
+   
+        
+}
+.side-nav ol{
+    height: 30vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+}
+
+.side-nav li{
+    margin-top: 20px;
+    margin-left: 30px;
+    
+}
+.side-nav h5{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.side-nav a{
+    text-decoration: none;
+    color: #f2f3f4;
+}
+
+@media (min-width:900px){
+	nav{
+		margin-right: 0px;
+	}
+	
+}
+
+.logout-btn {
+    background-color: #f44336; /* Red */
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f; /* Darker Red */
+}
+
+#admin-btn {
+    background-color: #616060;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#admin-btn:hover {
+    background-color: #555556;
+}

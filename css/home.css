@@ -1,0 +1,174 @@
+
+  /*Styles for slider start*/
+.slider{
+    width: 60vw;
+    min-width: 400px;
+    height: 35vw;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto 50px auto;
+    box-shadow: 0 0 15px 0;
+}
+
+.slides{
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    transition: 2s;
+}
+.slide img{
+    width: 100%;
+    height: 100%;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+#radio5:checked ~ .first{
+    margin-left: -80%;
+}
+/*Styles for slider ends*/
+
+/* Movies Gallery Styles */
+
+.movie-gallery-container{
+    margin: 50px 5px 0 5%;
+}
+
+
+.movie-gallery-container > span {
+    display:flex;
+    justify-content: space-between;
+    margin-right: 6%;
+    margin-left: 6%;
+}
+
+/* Dropdown Styling */
+ul {
+    list-style: none;
+}
+ul li {
+    display: inline-block;
+    position: relative;
+}
+.dropdown-btn {
+    display: block;
+    padding: 0px 10px;
+    text-decoration: none;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+    font-size: 16px;
+}
+.dropdown li {
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+.dropdown li:last-child {
+    border-bottom: none;
+}
+.dropdown {
+    width: fit-content;
+    background: #ffffff;
+    border: 1px double black;
+    border-radius: 5%;
+    position: absolute;
+    z-index: 1001;
+    display: none;
+}
+.dropdown li:hover {
+    background: #a1a1a1;
+}
+ul li:hover .dropdown {
+    display: block;
+}
+.filter > ul > li > a {
+    color: #000000;
+}
+/* drop down styyle end */
+.movie-gallery-container h4{
+    margin-bottom: 20px;
+    width: fit-content;
+}
+.movie-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:left;
+    align-items: center;
+    gap: 20px 5%;
+}
+.movie-group{
+    display: inline-block;
+    height: fit-content;
+    text-align: center;
+    transition: transform 0.3s ease-in-out; /* Add transition property */
+}
+
+.movie-group img {
+    height: 300px;
+    width: 200px;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 0;
+}
+
+.movie-group:hover {
+    transform: scale(1.05); /* Scale up to 105% on hover */
+}
+
+
+.movie-group input{
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: grey;
+    cursor: pointer;
+}
+
+.movie-group input:hover {
+    background-color: rgb(80, 79, 79);
+}
+
+
+/*
+@media (max-width:1200px){
+    .slider{
+        height: 67vh;
+    }
+}
+@media (max-width:800px){
+    .slider{
+        height: 60vh;
+    }
+}
+@media (max-width:600px){
+    .slider{
+        height: 45vh;
+    }
+}
+@media (max-width:500px){
+    .slider{
+        height: 30vh;
+    }
+}*/
